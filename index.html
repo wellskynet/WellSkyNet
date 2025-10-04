@@ -18,11 +18,42 @@
                         'handwritten': ['Kalam', 'cursive'],
                         'comfortaa': ['Comfortaa', 'cursive'],
                         'cyberhouse': ['Orbitron', 'monospace'],
+                    },
+                    animation: {
+                        'jumble': 'jumble 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'jumble': {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '25%': { transform: 'translateY(-10px) rotate(1deg)' },
+                            '50%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '75%': { transform: 'translateY(-5px) rotate(-1deg)' }
+                        }
                     }
                 }
             }
         }
     </script>
+    <style>
+        @keyframes jumble {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(1deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(-5px) rotate(-1deg); }
+        }
+        .animate-jumble {
+            animation: jumble 2s ease-in-out infinite;
+        }
+        .animate-jumble:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .animate-jumble:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        .animate-jumble:nth-child(3) {
+            animation-delay: 1s;
+        }
+    </style>
 </head>
 <body class="font-poppins">
     <!-- Navigation -->
@@ -40,10 +71,21 @@
                     <a href="#contact" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
                 </div>
                 <div class="md:hidden">
-                    <button class="text-gray-700 hover:text-blue-600">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-1">
+                <a href="#camera-hero" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Services</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">About</a>
+                <a href="#portfolio" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
             </div>
         </div>
     </nav>
@@ -484,7 +526,8 @@
             </div>
         </div>
     </section>
-<!-- Testimonials Section -->
+
+    <!-- Testimonials Section -->
     <section id="testimonials" class="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 relative overflow-hidden">
         <!-- Background floating elements -->
         <div class="absolute inset-0 pointer-events-none">
@@ -503,15 +546,16 @@
             </div>
 
             <!-- Jumbling Testimonials -->
-            <div class="flex justify-center space-x-8">
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 w-80 border border-gray-100 animate-jumble">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 w-full max-w-sm md:w-80 border border-gray-100 animate-jumble">
                             <div class="flex mb-4">
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
-                                <i class="fas fa-star text-yellow-400 text-lg"></i>
+                                <!-- <i class="fas fa-star text-yellow-400 text-lg"></i> -->
+
                             </div>
                             <p class="text-gray-700 mb-6 leading-relaxed italic">
                                 "WellSkyNet transformed our business with their exceptional web development services. The team delivered exactly what we needed, on time and within budget."
@@ -521,14 +565,14 @@
                                     JS
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-900">John Smith</h4>
-                                    <p class="text-gray-600 text-sm">CEO, TechStart Inc.</p>
+                                    <h4 class="font-semibold text-gray-900">Sneha Warma</h4>
+                                    <!-- <p class="text-gray-600 text-sm">CEO, TechStart Inc.</p> -->
                                 </div>
                             </div>
                         </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 w-80 border border-gray-100 animate-jumble">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 w-full max-w-sm md:w-80 border border-gray-100 animate-jumble">
                             <div class="flex mb-4">
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
@@ -544,19 +588,19 @@
                                     MJ
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-900">Maria Johnson</h4>
-                                    <p class="text-gray-600 text-sm">Founder, AppVenture</p>
+                                    <h4 class="font-semibold text-gray-900">Anupam Mali</h4>
+                                    <!-- <p class="text-gray-600 text-sm">Social Media Manager</p> -->
                                 </div>
                             </div>
                         </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-white rounded-2xl shadow-xl p-8 w-80 border border-gray-100 animate-jumble">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 w-full max-w-sm md:w-80 border border-gray-100 animate-jumble">
                             <div class="flex mb-4">
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
-                                <i class="fas fa-star text-yellow-400 text-lg"></i>
+                                <!-- <i class="fas fa-star text-yellow-400 text-lg"></i> -->
                                 <i class="fas fa-star text-yellow-400 text-lg"></i>
                             </div>
                             <p class="text-gray-700 mb-6 leading-relaxed italic">
@@ -567,8 +611,8 @@
                                     DW
                                 </div>
                                 <div class="ml-4">
-                                    <h4 class="font-semibold text-gray-900">David Wilson</h4>
-                                    <p class="text-gray-600 text-sm">CTO, InnovateCorp</p>
+                                    <h4 class="font-semibold text-gray-900">Aditya Shelke</h4>
+                                    <!-- <p class="text-gray-600 text-sm">CTO, InnovateCorp</p> -->
                                 </div>
                             </div>
                         </div>
@@ -584,6 +628,7 @@
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-hidden">
         <!-- Background decorative elements -->
@@ -650,7 +695,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Email</p>
-                                    <p class="text-gray-600">info@ithub.com</p>
+                                    <p class="text-gray-600">work@wellskynet.com</p>
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -659,7 +704,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Phone</p>
-                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                    <p class="text-gray-600">+91 7498164209</p>
                                 </div>
                             </div>
                             <div class="flex items-center">
@@ -668,7 +713,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Address</p>
-                                    <p class="text-gray-600">123 Tech Street, Digital City, DC 12345</p>
+                                    <p class="text-gray-600">Shivai building, KP nagar, Katraj, Pune</p>
                                 </div>
                             </div>
                         </div>
@@ -690,13 +735,13 @@
                     <div class="bg-white rounded-xl shadow-lg p-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6">Follow Us</h3>
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <a href="https://www.linkedin.com/company/wellskynet/about/" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <a href="https://www.instagram.com/wellskynet/" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="bg-blue-400 hover:bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <a href="https://x.com/WellSkyNet" target="_blank" class="bg-blue-400 hover:bg-blue-500 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </div>
@@ -728,13 +773,13 @@
                         Your comprehensive IT solutions provider. We deliver innovative technology solutions that drive business success.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://www.linkedin.com/company/wellskynet/about/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-linkedin-in text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://www.instagram.com/wellskynet/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-instagram text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <a href="https://x.com/WellSkyNet" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
                             <i class="fab fa-twitter text-xl"></i>
                         </a>
                     </div>
@@ -1008,6 +1053,34 @@
                 closeThankYouModal();
             }
         });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Toggle hamburger icon
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.className = 'fas fa-bars text-xl';
+                } else {
+                    icon.className = 'fas fa-times text-xl';
+                }
+            });
+            
+            // Close mobile menu when clicking on links
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.className = 'fas fa-bars text-xl';
+                });
+            });
+        }
     </script>
 </body>
 </html>
